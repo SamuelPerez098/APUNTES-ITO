@@ -1,5 +1,5 @@
 
-![](/img/Diagrama sin título.drawio4.1.png)
+![](../img/Diagrama sin%20título.drawio4.1.png)
 
 
 # EJEMPLOS 

@@ -144,14 +144,14 @@ Have/Has + Subject + Past Participle + Complement?
 
 **Presente perfecto signfica : Completado antes de ahora**
 
-![](/img/DIingles.drawio 1.png)
+![](../img/DIingles.drawio%201.png)
 
  - El uso de **BEEN** significa: *haber , estado , sido 
  - EL uso de **HAVE** significa : *haber , tener*
 
 ### TIME EXPRESIONS 
 
- - ![](/img/Diagrama sin título.drawio.2-1.png)
+ - ![](../img/Diagrama sin%20título.drawio.2-1.png)
 
 
 
@@ -187,7 +187,7 @@ Have/Has + Subject + Past Participle + ... + yet?
 # STILL
 
 
-![](/img/Diagrama sin título.drawio3.png)
+![](../img/Diagrama sin%20título.drawio3.png)
 
 
 
