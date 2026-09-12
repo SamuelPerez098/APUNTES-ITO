@@ -1,4 +1,4 @@
-![[Diagrama sin título.drawio5.png]]
+![](/img/Diagrama sin título.drawio5.png)
 
 
 # Modal Verbs
