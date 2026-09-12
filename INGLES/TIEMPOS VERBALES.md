@@ -1,5 +1,0 @@
-
-
-[[PRESENTE]]
-[[PASADO]]
-[[FUTURO]]
