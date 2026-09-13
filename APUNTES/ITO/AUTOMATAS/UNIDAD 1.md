@@ -1,8 +1,54 @@
 
 
+```mermaid
+flowchart TD
+    %% Título General
+    TEORIA["TEORÍA DE LENGUAJES<br/>Conceptos Fundamentales"]
 
-![](img/DiagramaAutomatas1.png)
+    %% 1. Alfabeto
+    TEORIA --> A["1. ALFABETO (Σ)<br/>Conjunto finito y no vacío de símbolos"]
+    A --> A_EX["Ejemplos:<br/>• Σ = {a, b}<br/>• Σ = {0, 1}"]
 
+    %% 2. Símbolo
+    A -->|"Elemento individual"| S["2. SÍMBOLO<br/>Elemento a ∈ Σ"]
+
+    %% 3. Cadena
+    A -->|"Secuencia finita"| C["3. CADENA (w)<br/>Secuencia de símbolos"]
+    C --> C_LEN["Longitud |w|<br/>Cantidad de símbolos<br/>Ej: w = abba ➔ |w| = 4"]
+
+    %% 4. Cadena Vacía
+    C -->|"Caso especial"| EV["4. CADENA VACÍA (ε)<br/>Cadena sin símbolos<br/>• |ε| = 0<br/>• ε ≠ ∅"]
+
+    %% 5. Lenguaje
+    C -->|"Conjunto de cadenas"| L["5. LENGUAJE (L)<br/>Conjunto de cadenas de Σ<br/>Ej: L = {a, ab, abba}"]
+
+    %% Operaciones
+    C -->|"Operaciones"| OPS["Conjuntos de Cadenas Finitas"]
+
+    OPS --> K["6. CLAUSURA DE KLEENE (Σ*)<br/>Cadenas posibles infinitas<br/>Incluye ε"]
+    K --> K_EX["Σ* = {ε, a, b, aa, ab, ...}"]
+
+    OPS --> KP["7. CLAUSURA POSITIVA (Σ⁺)<br/>Cadenas no vacías<br/>NO incluye ε"]
+    KP --> KP_EX["Σ⁺ = {a, b, aa, ab, ...}"]
+
+    %% Relación entre Clausuras
+    K <-->|"Σ* = {ε} ∪ Σ⁺"| KP
+
+    %% Estilos de color para Obsidian
+    style TEORIA fill:#1e293b,stroke:#94a3b8,stroke-width:2px,color:#fff
+    style A fill:#1e3a8a,stroke:#60a5fa,color:#fff
+    style A_EX fill:#0f172a,stroke:#475569,color:#cbd5e1
+    style S fill:#1d4ed8,stroke:#93c5fd,color:#fff
+    style C fill:#2563eb,stroke:#bfdbfe,color:#fff
+    style C_LEN fill:#1e40af,stroke:#93c5fd,color:#fff
+    style EV fill:#991b1b,stroke:#fca5a5,color:#fff
+    style L fill:#166534,stroke:#86efac,color:#fff
+    style OPS fill:#334155,stroke:#94a3b8,color:#fff
+    style K fill:#4338ca,stroke:#a5b4fc,color:#fff
+    style K_EX fill:#0f172a,stroke:#475569,color:#cbd5e1
+    style KP fill:#3730a3,stroke:#a5b4fc,color:#fff
+    style KP_EX fill:#0f172a,stroke:#475569,color:#cbd5e1
+```
 
 > [!important] Cadena Vacía (ε)
 > * **Sí es una cadena:** Tiene longitud 0 ($|\varepsilon| = 0$).
