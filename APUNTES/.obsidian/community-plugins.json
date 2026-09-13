@@ -1,5 +1,7 @@
 [
   "obsidian-excalidraw-plugin",
   "obsidian-git",
-  "wikilinks-to-mdlinks-obsidian"
+  "wikilinks-to-mdlinks-obsidian",
+  "mermaid-tools",
+  "drawio-obsidian"
 ]
