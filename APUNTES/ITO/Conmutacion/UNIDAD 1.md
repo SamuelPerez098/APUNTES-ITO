@@ -145,15 +145,11 @@ flowchart TD
 
 #### 2. Métodos de Reenvío de Tramas en Switches Cisco
 
-|**Método de Reenvío**|**Funcionamiento Técnico**|**Ventajas y Características**|
-|---|---|---|
-|**Store-and-Forward** _(Almacenamiento y Reenvío)_|Recibe la trama completa, verifica el campo FCS (verificación de errores) y luego la reenvía.|Garantiza que no se reenvíen tramas corruptas con errores.|
-|**Cut-Through** _(Fast-Forward)_|Lee únicamente la dirección MAC de destino e inicia el reenvío de inmediato.|Ofrece el nivel de latencia más bajo en la red.|
-|**Cut-Through** _(Fragment-Free)_|Lee y almacena los primeros 64 bytes de la trama antes de reenviar.|Filtra la mayoría de los errores y colisiones sin sacrificar excesiva velocidad.|
-Perfecto. Estructuraremos la información técnica de los temas mediante la **Opción 3 (Listas Anidadas con Negritas)**, utilizando encabezados claros y viñetas con sangría. Este formato es altamente legible en Obsidian, no depende de la alineación de caracteres monospaciados y se adapta limpiamente a cualquier tema de la interfaz.
-
-
-
+| **Método de Reenvío**                              | **Funcionamiento Técnico**                                                                    | **Ventajas y Características**                                                   |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Store-and-Forward** _(Almacenamiento y Reenvío)_ | Recibe la trama completa, verifica el campo FCS (verificación de errores) y luego la reenvía. | Garantiza que no se reenvíen tramas corruptas con errores.                       |
+| **Cut-Through** _(Fast-Forward)_                   | Lee únicamente la dirección MAC de destino e inicia el reenvío de inmediato.                  | Ofrece el nivel de latencia más bajo en la red.                                  |
+| **Cut-Through** _(Fragment-Free)_                  | Lee y almacena los primeros 64 bytes de la trama antes de reenviar.                           | Filtra la mayoría de los errores y colisiones sin sacrificar excesiva velocidad. |
 ###  Funcionamiento de la Tabla MAC / CAM en Switches
 
 - **Naturaleza del Dispositivo:** El switch es un dispositivo de conmutación que opera en la Capa 2 (Enlace de Datos) del modelo OSI.
