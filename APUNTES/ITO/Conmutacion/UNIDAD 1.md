@@ -137,11 +137,11 @@ flowchart TD
 
 #### 1. Tipos de Direccionamiento en la Capa de Enlace (MAC)
 
-|**Tipo de Dirección**|**Formato / Valor de Destino**|**Descripción y Uso Principal**|
-|---|---|---|
-|**Unidifusión (Unicast)**|Dirección MAC física específica de un host.|Envío de datos desde un único emisor hacia un único receptor. La dirección de origen siempre debe ser unicast.|
-|**Difusión (Broadcast)**|`FF-FF-FF-FF-FF-FF` (48 unos en binario).|Envío masivo a todos los dispositivos dentro del mismo segmento de red local.|
-|**Multidifusión (Multicast)**|Inicia obligatoriamente con `01-00-5E` en hexadecimal.|Envío a un grupo específico de dispositivos suscriptos dentro del segmento.|
+| **Tipo de Dirección**         | **Formato / Valor de Destino**                         | **Descripción y Uso Principal**                                                                                |
+| ----------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| **Unidifusión (Unicast)**     | Dirección MAC física específica de un host.            | Envío de datos desde un único emisor hacia un único receptor. La dirección de origen siempre debe ser unicast. |
+| **Difusión (Broadcast)**      | `FF-FF-FF-FF-FF-FF` (48 unos en binario).              | Envío masivo a todos los dispositivos dentro del mismo segmento de red local.                                  |
+| **Multidifusión (Multicast)** | Inicia obligatoriamente con `01-00-5E` en hexadecimal. | Envío a un grupo específico de dispositivos suscriptos dentro del segmento.                                    |
 
 #### 2. Métodos de Reenvío de Tramas en Switches Cisco
 
@@ -222,24 +222,24 @@ flowchart TD
 
 #### 1. Comparativa de Encabezados y Protocolos de la Capa de Red
 
-|Característica / Campo|Protocolo IPv4|Protocolo IPv6|
-|---|---|---|
-|**Tamaño de Dirección**|32 bits.<br><br>PDF|128 bits.<br><br>PDF|
-|**Tamaño Base del Encabezado**|20 bytes.<br><br>PDF|40 bytes (fijo y simplificado).<br><br>PDF|
-|**Límite de Vida del Paquete**|Campo _Tiempo de duración_ (TTL).<br><br>PDF|Campo _Límite de saltos_ (_Hop Limit_).<br><br>PDF|
-|**Prioridad / Calidad de Servicio**|_Servicios diferenciados_ (DS / DSCP).<br><br>PDF|_Clase de tráfico_ (_Traffic Class_).<br><br>PDF|
-|**Identificación de Flujo**|No disponible en encabezado base.<br><br>PDF|Campo _Etiqueta de flujo_ (_Flow Label_).<br><br>PDF|
+| Característica / Campo              | Protocolo IPv4                                 | Protocolo IPv6                                    |
+| ----------------------------------- | ---------------------------------------------- | ------------------------------------------------- |
+| **Tamaño de Dirección**             | 32 bits.                                       | 128 bits.<br>                                     |
+| **Tamaño Base del Encabezado**      | 20 bytes.<br><br>                              | 40 bytes (fijo y simplificado).<br><br>           |
+| **Límite de Vida del Paquete**      | Campo _Tiempo de duración_ (TTL).<br><br>      | Campo _Límite de saltos_ (_Hop Limit_).<br><br>   |
+| **Prioridad / Calidad de Servicio** | _Servicios diferenciados_ (DS / DSCP).<br><br> | _Clase de tráfico_ (_Traffic Class_).<br><br>     |
+| **Identificación de Flujo**         | No disponible en encabezado base.<br>          | Campo _Etiqueta de flujo_ (_Flow Label_).<br><br> |
 
 #### 2. Tipos de Memorias en un Router Cisco y su Función
 
-|Tipo de Memoria|Volatilidad|Contenido Principal Almacenado|
-|---|---|---|
-|**RAM (SDRAM)**|Volátil<br><br>PDF|Configuración en ejecución (`running-config`), tablas de routing y búfer de paquetes.<br><br>PDF|
-|**Flash**|No volátil<br><br>PDF|Imagen del sistema operativo Cisco IOS y otros archivos del sistema.<br><br>PDF|
-|**NVRAM**|No volátil<br><br>PDF|Archivo de configuración de inicio (`startup-config`).<br><br>PDF|
-|**ROM**|No volátil<br><br>PDF|Instrucciones de arranque, diagnóstico POST y software IOS simplificado.<br><br>PDF|
+| Tipo de Memoria | Volatilidad        | Contenido Principal Almacenado                                                            |
+| --------------- | ------------------ | ----------------------------------------------------------------------------------------- |
+| **RAM (SDRAM)** | Volátil<br><br>    | Configuración en ejecución (`running-config`), tablas de routing y búfer de paquetes.<br> |
+| **Flash**       | No volátil<br><br> | Imagen del sistema operativo Cisco IOS y otros archivos del sistema.<br><br>              |
+| **NVRAM**       | No volátil<br><br> | Archivo de configuración de inicio (`startup-config`).<br><br>                            |
+| **ROM**         | No volátil<br><br> | Instrucciones de arranque, diagnóstico POST y software IOS simplificado.<br><br>          |
 
-### Cartas Informativas de Conceptos Clave
+### Conceptos 
 
 > [!info] Funciones de la Capa de Red y Características de IP
 > 
@@ -322,13 +322,13 @@ flowchart TD
 
 #### Comparativa de Direcciones IPv4 e IPv6
 
-|Característica / Propiedad|Protocolo IPv4|Protocolo IPv6|
-|---|---|---|
-|**Longitud y Formato**|32 bits divididos en 4 octetos decimales.<br><br>PDF|128 bits organizados en 8 hextetos hexadecimales.|
-|**Tipos de Tráfico**|Unidifusión, Difusión (_Broadcast_) y Multidifusión.|Unidifusión, Multidifusión y Difusión por proximidad (_Anycast_).|
-|**Coexistencia / Transición**|N/A|Doble pila, Tunelización y Traducción (NAT64).|
-|**Asignación Automática Local**|APIPA (`169.254.0.0/16`).|Direcciones Link-Local creadas autónomamente por el host.|
-|**Mecanismos Dinámicos**|Servidor DHCP.|SLAAC y DHCPv6.|
+| Característica / Propiedad      | Protocolo IPv4                                       | Protocolo IPv6                                                    |
+| ------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------- |
+| **Longitud y Formato**          | 32 bits divididos en 4 octetos decimales.<br>        | 128 bits organizados en 8 hextetos hexadecimales.                 |
+| **Tipos de Tráfico**            | Unidifusión, Difusión (_Broadcast_) y Multidifusión. | Unidifusión, Multidifusión y Difusión por proximidad (_Anycast_). |
+| **Coexistencia / Transición**   | N/A                                                  | Doble pila, Tunelización y Traducción (NAT64).                    |
+| **Asignación Automática Local** | APIPA (`169.254.0.0/16`).                            | Direcciones Link-Local creadas autónomamente por el host.         |
+| **Mecanismos Dinámicos**        | Servidor DHCP.                                       | SLAAC y DHCPv6.                                                   |
 
 #### Rangos de Direcciones IPv4 Privadas y Especiales
 
@@ -347,7 +347,7 @@ flowchart TD
 > 
 > - **Estructura:** Formada por 32 bits divididos en porción de red y porción de host según la máscara de subred o prefijo.
 >     
->     PDF
+>     
 >     
 > - **Operación AND:** Proceso matemático lógico entre la dirección IP y la máscara para determinar la dirección de red.
 >     
@@ -433,7 +433,7 @@ flowchart TD
 |`/24`|`/27`|8|30|Cumplir requisitos de hasta 7 departamentos (máx. 29 hosts).|
 |`/16`|`/18`|4|16 382|Subredes de gran tamaño corporativo.|
 |`/16`|`/23`|128|510|Redes medianas con alta densidad de subredes.|
-### Módulos Informativos de Conceptos Clave
+###  Conceptos 
 
 > [!info] 1. Segmentación de Red y Dominios de Difusión
 > 
@@ -505,7 +505,7 @@ flowchart TD
 |**Puertos Registrados**|`1024` a `49151`|Asignados por la IANA a aplicaciones de usuario específicas.|
 |**Puertos Privados o Dinámicos**|`49152` a `65535`|Asignados dinámicamente por el S.O. cliente al iniciar una comunicación.|
 
-### Módulos Informativos de Conceptos Clave
+### Conceptos 
 
 > [!info] 1. Funciones de la Capa de Transporte y Sockets
 > 
