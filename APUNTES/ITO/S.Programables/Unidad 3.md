@@ -22,14 +22,14 @@ Está diseñado principalmente para realizar tareas de control en **sistemas emb
 
 Un microcontrolador integra principalmente:
 
-| Componente | Función |
-|---|---|
-| **CPU** | Ejecuta las instrucciones y procesa los datos. |
-| **Memoria** | Almacena programas y datos temporales. |
-| **GPIO** | Permiten entrada y salida de señales digitales. |
-| **ADC** | Convierte señales analógicas en digitales. |
-| **Timers** | Permiten medir tiempos y generar eventos. |
-| **Interfaces de comunicación** | Permiten comunicarse con otros dispositivos. |
+| Componente                     | Función                                         |
+| ------------------------------ | ----------------------------------------------- |
+| **CPU**                        | Ejecuta las instrucciones y procesa los datos.  |
+| **Memoria**                    | Almacena programas y datos temporales.          |
+| **GPIO**                       | Permiten entrada y salida de señales digitales. |
+| **ADC**                        | Convierte señales analógicas en digitales.      |
+| **Timers**                     | Permiten medir tiempos y generar eventos.       |
+| **Interfaces de comunicación** | Permiten comunicarse con otros dispositivos.    |
 
 ### Diagrama general
 
