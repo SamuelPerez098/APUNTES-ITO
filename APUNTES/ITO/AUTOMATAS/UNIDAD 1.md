@@ -250,21 +250,29 @@ Una vez alcanzado `q2` (ya se cumplió que inicia con `ab`), cualquier símbolo 
 
 ```mermaid
 flowchart LR
-    %% Transición de inicio limpia
-    start[ ] -->| | q0((q0))
+    start[ ] --> q0
 
-    %% Transiciones del autómata
-    q0 -->|a| q1((q1))
-    q1 -->|b| q2(((q2)))
-    q2 -->|a, b| q2
+    q0((q0))
+    q1((q1))
+    q2((q2))
+    q3(((q3)))
 
-    q0 -->|b| q_error((qe))
-    q1 -->|a| q_error
-    q_error -->|a, b| q_error
+    q0 -->|0| q1
+    q0 -->|1| q0
 
-    %% Estilos para simular la segunda imagen (Fondo claro, bordes negros)
+    q1 -->|0| q1
+    q1 -->|1| q2
+
+    q2 -->|0| q3
+    q2 -->|1| q0
+
+    q3 -->|0, 1| q3
+
     style start fill:none,stroke:none
-   
+    style q0 fill:#c8e6c9,stroke:#2e7d32,stroke-width:1.5px,color:#000
+    style q1 fill:#c8e6c9,stroke:#2e7d32,stroke-width:1.5px,color:#000
+    style q2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:1.5px,color:#000
+    style q3 fill:#c8e6c9,stroke:#1b5e20,stroke-width:3.5px,color:#000
 ```
 
 
