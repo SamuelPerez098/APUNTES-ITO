@@ -37,7 +37,7 @@ Fragmento de código
 
 ```mermaid
 flowchart LR
-    R1((Router A)) -- "Serial 0/0/0 (HDLC sin autenticación)" --- MITM[⚠️ Atacante MITM] --- R2((Router B))
+    R1((Router A)) -- "Serial 0/0/0 (HDLC sin autenticación)" --- MITM[ Atacante MITM] --- R2((Router B))
 ```
 
 ### Configuración (en ambos extremos)
@@ -271,8 +271,8 @@ RouterB(config-if)# frame-relay map ip 10.1.1.1 200 broadcast
 | **HDLC**        | Punto a punto (Serial) | Ninguna (vulnerable a MITM)<br><br> | No aplica                       | Enlaces dedicados Cisco-a-Cisco<br><br>          |
 | **PPP (PAP)**   | Punto a punto (Serial) | Texto claro (2 vías)<br><br>        | No aplica                       | Enlaces punto a punto legacy                     |
 | **PPP (CHAP)**  | Punto a punto (Serial) | Hash MD5 (3 vías)<br><br>           | No aplica                       | Enlaces dedicados multi-fabricante<br><br>       |
-| **PPPoE**       | Ethernet / xDSL        | PAP / CHAP<br><br>i                 | MAC + Session ID                | Acceso a Internet de banda ancha (ISP)<br><br>   |
-| **Frame Relay** | Conmutado (NBMA)       | ❌ Ninguna nativa                    | **DLCI** (ej. 100, 200)<br><br> | Interconexión de sucursales corporativas<br><br> |
+| **PPPoE**       | Ethernet / xDSL        | PAP / CHAP<br>                      | MAC + Session ID                | Acceso a Internet de banda ancha (ISP)<br><br>   |
+| **Frame Relay** | Conmutado (NBMA)       | Ninguna nativa                      | **DLCI** (ej. 100, 200)<br><br> | Interconexión de sucursales corporativas<br><br> |
 
 ### Componentes Físicos de una Red WAN
 
