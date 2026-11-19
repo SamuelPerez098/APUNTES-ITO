@@ -1,0 +1,23 @@
+meta {
+  name: categories-create
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{baseUrl}}/admin/categories
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+}
+
+body:json {
+  {
+    "name": "Gramática",
+    "description": "Actividades de gramática"
+  }
+}

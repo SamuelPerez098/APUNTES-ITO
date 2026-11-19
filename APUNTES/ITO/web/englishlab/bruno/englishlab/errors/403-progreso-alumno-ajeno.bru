@@ -1,0 +1,17 @@
+// CODIGO ESPERADO: 403 Forbidden (teacher1 intenta ver el progreso de student6,
+// que pertenece a teacher2). id 9 = student6@englishlab.com, vinculado a teacher2.
+meta {
+  name: 403-progreso-alumno-ajeno
+  type: http
+  seq: 29
+}
+
+get {
+  url: {{baseUrl}}/teacher/students/9/progress
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{teacherToken}}
+}

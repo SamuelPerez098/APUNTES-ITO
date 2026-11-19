@@ -1,0 +1,25 @@
+// studentId 4 = student1@englishlab.com (alumno de teacher1) y
+// activityId 1 = actividad MULTIPLE_CHOICE A1 del objetivo PRON (seed).
+meta {
+  name: assignments-create
+  type: http
+  seq: 22
+}
+
+post {
+  url: {{baseUrl}}/teacher/assignments
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{teacherToken}}
+}
+
+body:json {
+  {
+    "studentId": 4,
+    "activityId": 1
+  }
+}

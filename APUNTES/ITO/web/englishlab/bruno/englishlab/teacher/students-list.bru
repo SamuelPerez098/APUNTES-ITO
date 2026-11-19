@@ -1,0 +1,22 @@
+meta {
+  name: students-list
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/teacher/students
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 0
+  size: 20
+  sort: name
+  text:
+}
+
+headers {
+  Authorization: Bearer {{teacherToken}}
+}

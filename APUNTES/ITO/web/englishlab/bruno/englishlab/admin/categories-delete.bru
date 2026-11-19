@@ -1,0 +1,17 @@
+// Categoria 6 = "Condicionales" (seed). Al borrarla, las actividades que la usan
+// (14 y 15) NO se eliminan: su category_id queda en null (FK ON DELETE SET NULL).
+meta {
+  name: categories-delete
+  type: http
+  seq: 14
+}
+
+delete {
+  url: {{baseUrl}}/admin/categories/6
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

@@ -1,0 +1,16 @@
+// id 4 = student1@englishlab.com, alumno vinculado a teacher1 (seed).
+meta {
+  name: student-progress
+  type: http
+  seq: 23
+}
+
+get {
+  url: {{baseUrl}}/teacher/students/4/progress
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{teacherToken}}
+}

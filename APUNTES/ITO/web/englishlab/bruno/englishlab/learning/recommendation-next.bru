@@ -1,0 +1,15 @@
+meta {
+  name: recommendation-next
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{baseUrl}}/recommendations/next
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{studentToken}}
+}

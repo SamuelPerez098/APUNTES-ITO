@@ -1,0 +1,24 @@
+// email de un STUDENT sin profesor vinculado (no puede ser uno de los del seed,
+// que ya están vinculados). Un email inexistente da 404; no STUDENT da 422.
+meta {
+  name: students-link
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{baseUrl}}/teacher/students
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{teacherToken}}
+}
+
+body:json {
+  {
+    "email": "nuevo.alumno@englishlab.com"
+  }
+}

@@ -1,0 +1,16 @@
+// CODIGO ESPERADO: 422 Unprocessable Entity (COND2 id 12 está bloqueado para un estudiante sin dominio previo: su prerrequisito COND1 no está dominado).
+meta {
+  name: 422-objetivo-bloqueado
+  type: http
+  seq: 35
+}
+
+get {
+  url: {{baseUrl}}/me/objectives/12/activities
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{studentToken}}
+}

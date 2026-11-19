@@ -1,0 +1,26 @@
+// activityId 1 = MULTIPLE_CHOICE A1 del objetivo PRON; la opcion correcta es la "b".
+// Respuesta correcta: 200 con "correct": true.
+// assignmentId es opcional: añádelo al body si el intento viene de una asignación.
+meta {
+  name: attempt
+  type: http
+  seq: 27
+}
+
+post {
+  url: {{baseUrl}}/attempts
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{studentToken}}
+}
+
+body:json {
+  {
+    "activityId": 1,
+    "answer": "b"
+  }
+}

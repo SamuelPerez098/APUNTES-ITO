@@ -1,0 +1,41 @@
+// Actividad 15 = MULTIPLE_CHOICE B2 del objetivo COND2 (12), categoria 6 (seed).
+// El PUT exige el objeto completo (objectiveId, type, level, skill, title, content):
+// no admite actualizacion parcial.
+meta {
+  name: activities-update
+  type: http
+  seq: 17
+}
+
+put {
+  url: {{baseUrl}}/content/activities/15
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+}
+
+body:json {
+  {
+    "objectiveId": 12,
+    "categoryId": 6,
+    "type": "MULTIPLE_CHOICE",
+    "level": "B2",
+    "skill": "grammar",
+    "title": "Choose the correct second conditional (actualizado)",
+    "content": {
+      "prompt": "If I ___ a million dollars, I would travel the world.",
+      "options": [
+        { "id": "a", "text": "have" },
+        { "id": "b", "text": "had" },
+        { "id": "c", "text": "will have" },
+        { "id": "d", "text": "would have" }
+      ],
+      "answer": "b",
+      "explanation": "Segundo condicional: if + pasado simple, would + verbo base."
+    }
+  }
+}

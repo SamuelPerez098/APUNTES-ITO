@@ -1,0 +1,24 @@
+// CODIGO ESPERADO: 422 Unprocessable Entity (student1 ya tiene profesor vinculado:
+// teacher1). teacher1 intenta vincular de nuevo a student1.
+meta {
+  name: 422-estudiante-ya-vinculado
+  type: http
+  seq: 31
+}
+
+post {
+  url: {{baseUrl}}/teacher/students
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{teacherToken}}
+}
+
+body:json {
+  {
+    "email": "student1@englishlab.com"
+  }
+}

@@ -1,0 +1,25 @@
+// Clave del usuario NUEVO que se registra: variable {{newUserPassword}} del entorno.
+// Debe cumplir la politica (8+, mayuscula, numero y caracter especial).
+meta {
+  name: register
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/auth/register
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Estudiante Prueba",
+    "email": "estudiante.prueba@englishlab.com",
+    "password": "{{newUserPassword}}"
+  }
+}

@@ -1,0 +1,31 @@
+// Usuario 12 = student9@englishlab.com (estudiante del seed, alumno de teacher2).
+// El email NO se cambia (sigue siendo student9@englishlab.com) para no chocar con
+// otro usuario y provocar un 422 "El email ya esta registrado".
+// teacherId 3 = teacher2: se envia para conservar el vinculo del alumno; si se omite,
+// el servicio deja al estudiante sin profesor.
+meta {
+  name: users-update
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{baseUrl}}/admin/users/12
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+}
+
+body:json {
+  {
+    "name": "Estudiante Nueve Actualizado",
+    "email": "student9@englishlab.com",
+    "role": "STUDENT",
+    "teacherId": 3,
+    "phone": "+34600000009"
+  }
+}

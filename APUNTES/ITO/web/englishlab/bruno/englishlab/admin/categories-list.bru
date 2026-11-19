@@ -1,0 +1,22 @@
+meta {
+  name: categories-list
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/admin/categories
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 0
+  size: 20
+  sort: name
+  text:
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

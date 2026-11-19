@@ -1,0 +1,16 @@
+// CODIGO ESPERADO: 403 Forbidden (un STUDENT no puede acceder a una ruta ADMIN).
+meta {
+  name: 403-estudiante-en-admin
+  type: http
+  seq: 28
+}
+
+get {
+  url: {{baseUrl}}/admin/users
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{studentToken}}
+}
