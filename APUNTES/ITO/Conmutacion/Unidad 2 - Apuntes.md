@@ -10,7 +10,7 @@ aliases:
 
 ## Progreso de estudio
 
-- [ ] 1. Switch: arranque, SVI y puertos
+- [x] 1. Switch: arranque, SVI y puertos
 - [ ] 2. Port Security y errores de interfaz
 - [ ] 3. VLANs, trunks, DTP y VTP
 - [ ] 4. Diseño jerárquico
@@ -32,22 +32,22 @@ aliases:
 
 > [!abstract] Repásala el día antes del examen
 
-| Tema | Dato clave |
-| --- | --- |
-| Memorias | **ROM**: POST + bootloader · **Flash**: IOS · **NVRAM**: startup-config · **RAM**: running-config |
-| Port Security (default) | ==Deshabilitado==, **1** MAC, violación **Shutdown** |
-| Runts / Giants | Runt < **64 B** · Giant > **1518 B** |
-| VLAN normal / extendida | **1–1005** (`vlan.dat`, Flash) · **1006–4094** (`running-config`) |
-| 802.1Q | Etiqueta de **4 bytes** · EtherType `0x8100` · VID de **12 bits** |
-| VLAN de voz | Retardo < **150 ms** |
-| STP: costos | 10 Gbps=**2** · 1 Gbps=**4** · 100 Mbps=**19** · 10 Mbps=**100** |
-| STP: prioridad default | **32768** (gana el BID más bajo) |
-| ACL estándar / extendida | **1–99** / **100–199** (+ 1300–1999 / 2000–2699) |
-| Ubicación ACL | Estándar → cerca del **DESTINO** · Extendida → cerca del **ORIGEN** |
-| HSRP | Prioridad default **100** · v1 `224.0.0.2` · v2 `224.0.0.102` |
-| EIGRP | AD **90** interna / **170** externa / **5** resumen · multicast `224.0.0.10` |
-| OSPF | AD **110** · `224.0.0.5` (todos) · `224.0.0.6` (DR/BDR) |
-| OSPF DR | Prioridad **0–255** (default 1) · **0 = nunca DR/BDR** |
+| Tema                     | Dato clave                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| Memorias                 | **ROM**: POST + bootloader · **Flash**: IOS · **NVRAM**: startup-config · **RAM**: running-config |
+| Port Security (default)  | ==Deshabilitado==, **1** MAC, violación **Shutdown**                                              |
+| Runts / Giants           | Runt < **64 B** · Giant > **1518 B**                                                              |
+| VLAN normal / extendida  | **1–1005** (`vlan.dat`, Flash) · **1006–4094** (`running-config`)                                 |
+| 802.1Q                   | Etiqueta de **4 bytes** · EtherType `0x8100` · VID de **12 bits**                                 |
+| VLAN de voz              | Retardo < **150 ms**                                                                              |
+| STP: costos              | 10 Gbps=**2** · 1 Gbps=**4** · 100 Mbps=**19** · 10 Mbps=**100**                                  |
+| STP: prioridad default   | **32768** (gana el BID más bajo)                                                                  |
+| ACL estándar / extendida | **1–99** / **100–199** (+ 1300–1999 / 2000–2699)                                                  |
+| Ubicación ACL            | Estándar → cerca del **DESTINO** · Extendida → cerca del **ORIGEN**                               |
+| HSRP                     | Prioridad default **100** · v1 `224.0.0.2` · v2 `224.0.0.102`                                     |
+| EIGRP                    | AD **90** interna / **170** externa / **5** resumen · multicast `224.0.0.10`                      |
+| OSPF                     | AD **110** · `224.0.0.5` (todos) · `224.0.0.6` (DR/BDR)                                           |
+| OSPF DR                  | Prioridad **0–255** (default 1) · **0 = nunca DR/BDR**                                            |
 
 ---
 
@@ -223,11 +223,11 @@ flowchart TD
     A2 --- H2[PCs / APs / Teléfonos IP]
 ```
 
-| Capa | Función clave |
-| --- | --- |
-| **Acceso** | Conecta dispositivos finales · **Port Security** · asignación de **VLANs** |
-| **Distribución** | **Agrega** tráfico de acceso · **Routing Inter-VLAN** · define límites de broadcast |
-| **Núcleo (Core)** | Backbone de **alta velocidad**, conmuta lo más rápido posible |
+| Capa              | Función clave                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------- |
+| **Acceso**        | Conecta dispositivos finales · **Port Security** · asignación de **VLANs**          |
+| **Distribución**  | **Agrega** tráfico de acceso · **Routing Inter-VLAN** · define límites de broadcast |
+| **Núcleo (Core)** | Backbone de **alta velocidad**, conmuta lo más rápido posible                       |
 
 ---
 
@@ -279,11 +279,11 @@ flowchart LR
 
 Agrupa varios enlaces físicos en **uno lógico**: más ancho de banda + redundancia.
 
-| Protocolo | Estándar | Modo que inicia | Modo que espera | Forma canal |
-| --- | --- | --- | --- | --- |
-| **PAgP** | Propietario Cisco | `Desirable` | `Auto` | Des+Des · Des+Auto ✅ — **Auto+Auto ❌** |
-| **LACP** | IEEE 802.3ad | `Active` | `Passive` | Act+Act · Act+Pas ✅ — **Pas+Pas ❌** |
-| **On** | — | — | — | Solo `On` + `On` (sin protocolo) |
+| Protocolo | Estándar          | Modo que inicia | Modo que espera | Forma canal                            |
+| --------- | ----------------- | --------------- | --------------- | -------------------------------------- |
+| **PAgP**  | Propietario Cisco | `Desirable`     | `Auto`          | Des+Des · Des+Auto ✅ — **Auto+Auto ❌** |
+| **LACP**  | IEEE 802.3ad      | `Active`        | `Passive`       | Act+Act · Act+Pas ✅ — **Pas+Pas ❌**    |
+| **On**    | —                 | —               | —               | Solo `On` + `On` (sin protocolo)       |
 
 > [!tip] Truco
 > Los modos "activos" (Desirable/Active) **inician**; los "pasivos" (Auto/Passive) **esperan**. Dos pasivos = no hay canal.

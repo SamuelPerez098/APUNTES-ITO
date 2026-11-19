@@ -1,9 +1,7 @@
 #  Protocolos de Enlace WAN en Cisco IOS
 
-Apuntes sobre tecnologías de [[Capa de Enlace de Datos]] para redes [[WAN]], configuración de encapsulamientos seriales, autenticación punto a punto, túneles sobre Ethernet y conmutación de tramas.
 ## 1. Panorama de Tecnologías WAN
 
-En el pizarrón se clasifican las principales tecnologías de acceso y encapsulamiento WAN:
 
 ```mermaid
 flowchart LR
@@ -30,10 +28,6 @@ flowchart LR
 Protocolo de capa 2 síncrono orientado a bits. Es el encapsulamiento predeterminado en interfaces seriales de routers Cisco y **debe coincidir en ambos extremos del enlace**.
 
 > [!warning] Riesgo de Seguridad (MITM) **HDLC** no incluye mecanismos nativos de autenticación ni cifrado. Un atacante con acceso físico al enlace serial puede interceptar el tráfico mediante un ataque **Man-in-the-Middle (MITM)** sin que los routers lo detecten.
-> 
-> imagen.jpg
-
-Fragmento de código
 
 ```mermaid
 flowchart LR
@@ -41,8 +35,6 @@ flowchart LR
 ```
 
 ### Configuración (en ambos extremos)
-
-Fragmento de código
 
 ```
 Router(config)# interface serial 0/0/0
@@ -53,9 +45,7 @@ Router(config-if)# encapsulation hdlc
 
 A diferencia de HDLC, **PPP** es un estándar abierto que soporta múltiples protocolos de capa 3, autenticación, compresión de datos y monitoreo de calidad del enlace.
 
-Fragmento de código
-
-```
+```mermaid
 sequenceDiagram
     participant C as Cliente / Router 1
     participant S as Servidor / Router 2
@@ -90,8 +80,6 @@ Router(config-if)# ppp quality 80
 
 - **Extremo Cliente:** envía explícitamente el usuario y contraseña configurados.
 
-Fragmento de código
-
 ```
 Router(config)# interface serial 0/0/0
 Router(config-if)# encapsulation ppp
@@ -106,10 +94,6 @@ Router(config-if)# ppp quality 80
 
 
 - **Router 1:**
-    
-
-Fragmento de código
-
 ```
 Router1(config)# username Router2 password MiClaveSecreta
 Router1(config)# interface serial 0/0/0
@@ -120,9 +104,6 @@ Router1(config-if)# ppp quality 50
 ```
 
 - **Router 2:**
-    
-
-Fragmento de código
 
 ```
 Router2(config)# username Router1 password MiClaveSecreta
@@ -162,7 +143,6 @@ flowchart LR
 
 La interfaz física actúa solo como transporte sin dirección IP; toda la lógica de capa 3 reside en la interfaz virtual `Dialer 1`:
 
-Fragmento de código
 
 ```
 ! 1. Vincular interfaz física al pool de marcación
@@ -195,7 +175,6 @@ Router(config)# ip route 0.0.0.0 0.0.0.0 Dialer 1
 
 El servidor utiliza un grupo de acceso de banda ancha (`bba-group`) asociado a una plantilla virtual (`Virtual-Template`) que clona sesiones para cada cliente conectado:
 
-Fragmento de código
 
 ```
 ! 1. Crear grupo BBA y vincular plantilla
@@ -226,10 +205,6 @@ Router(config)# username cliente_pppoe password 0 mi_password
 ## 5. Frame Relay
 
 Protocolo WAN de conmutación de paquetes que utiliza circuitos virtuales identificados localmente por un **DLCI** (_Data-Link Connection Identifier_). Al ser una red **NBMA** (_Non-Broadcast Multi-Access_), requiere mapear manualmente las direcciones IP remotas con los DLCI locales y habilitar la palabra clave `broadcast` para permitir el paso de protocolos de enrutamiento.
-
-imagen.jpg
-
-Fragmento de código
 
 ```mermaid 
 flowchart LR
