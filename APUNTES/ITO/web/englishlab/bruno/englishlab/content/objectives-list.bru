@@ -1,0 +1,15 @@
+meta {
+  name: objectives-list
+  type: http
+  seq: 19
+}
+
+get {
+  url: {{baseUrl}}/content/objectives
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

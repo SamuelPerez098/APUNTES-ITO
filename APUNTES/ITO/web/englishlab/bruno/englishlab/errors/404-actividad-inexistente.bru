@@ -1,0 +1,24 @@
+// CODIGO ESPERADO: 404 Not Found (activityId 99999 no existe).
+meta {
+  name: 404-actividad-inexistente
+  type: http
+  seq: 32
+}
+
+post {
+  url: {{baseUrl}}/attempts
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{studentToken}}
+}
+
+body:json {
+  {
+    "activityId": 99999,
+    "answer": "hola"
+  }
+}

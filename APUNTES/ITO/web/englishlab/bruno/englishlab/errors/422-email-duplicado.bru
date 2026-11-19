@@ -1,0 +1,25 @@
+// CODIGO ESPERADO: 422 Unprocessable Entity (el email admin@englishlab.com ya existe).
+// La clave no se evalua (falla antes por el email): {{demoPassword}} del entorno.
+meta {
+  name: 422-email-duplicado
+  type: http
+  seq: 30
+}
+
+post {
+  url: {{baseUrl}}/auth/register
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Duplicado",
+    "email": "admin@englishlab.com",
+    "password": "{{demoPassword}}"
+  }
+}

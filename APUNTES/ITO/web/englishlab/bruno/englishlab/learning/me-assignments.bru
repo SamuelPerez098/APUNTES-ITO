@@ -1,0 +1,15 @@
+meta {
+  name: me-assignments
+  type: http
+  seq: 26
+}
+
+get {
+  url: {{baseUrl}}/me/assignments
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{studentToken}}
+}

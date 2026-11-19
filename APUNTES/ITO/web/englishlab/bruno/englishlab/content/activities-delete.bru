@@ -1,0 +1,16 @@
+// Actividad 15 = MULTIPLE_CHOICE B2 del objetivo COND2 (12), categoria 6 (seed).
+meta {
+  name: activities-delete
+  type: http
+  seq: 18
+}
+
+delete {
+  url: {{baseUrl}}/content/activities/15
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

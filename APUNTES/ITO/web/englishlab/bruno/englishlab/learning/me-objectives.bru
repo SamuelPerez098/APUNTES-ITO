@@ -1,0 +1,15 @@
+meta {
+  name: me-objectives
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{baseUrl}}/me/objectives
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{studentToken}}
+}

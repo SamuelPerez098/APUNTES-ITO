@@ -1,0 +1,16 @@
+// Usuario 12 = student9@englishlab.com (estudiante del seed, alumno de teacher2).
+meta {
+  name: users-delete
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/admin/users/12
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

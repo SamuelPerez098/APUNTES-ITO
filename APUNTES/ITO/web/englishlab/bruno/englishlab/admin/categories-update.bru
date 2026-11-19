@@ -1,0 +1,24 @@
+// Categoria 6 = "Condicionales" (seed).
+meta {
+  name: categories-update
+  type: http
+  seq: 13
+}
+
+put {
+  url: {{baseUrl}}/admin/categories/6
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+}
+
+body:json {
+  {
+    "name": "Gramática Avanzada",
+    "description": "Descripción actualizada"
+  }
+}

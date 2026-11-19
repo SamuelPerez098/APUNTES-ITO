@@ -1,0 +1,26 @@
+meta {
+  name: activities-list
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/content/activities
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 0
+  size: 20
+  sort: title
+  level:
+  skill:
+  type:
+  categoryId:
+  text:
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

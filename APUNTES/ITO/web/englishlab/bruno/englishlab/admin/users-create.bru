@@ -1,0 +1,27 @@
+// Clave inicial del usuario creado por el admin: {{newUserPassword}} del entorno.
+meta {
+  name: users-create
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/admin/users
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+}
+
+body:json {
+  {
+    "name": "Profesor Nuevo",
+    "email": "profesor.nuevo@englishlab.com",
+    "password": "{{newUserPassword}}",
+    "role": "TEACHER",
+    "phone": "+34600111222"
+  }
+}

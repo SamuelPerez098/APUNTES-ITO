@@ -1,0 +1,18 @@
+// CODIGO ESPERADO: 401 Unauthorized (token revocado tras logout).
+// Pasos: 1) ejecutar auth/logout (revoca adminToken). 2) ejecutar este request
+// con el MISMO token (ya revocado) -> 401.
+meta {
+  name: 401-token-revocado
+  type: http
+  seq: 34
+}
+
+get {
+  url: {{baseUrl}}/admin/users
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{adminToken}}
+}

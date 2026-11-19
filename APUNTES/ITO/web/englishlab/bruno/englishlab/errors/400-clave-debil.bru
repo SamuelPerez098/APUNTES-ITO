@@ -1,0 +1,25 @@
+// CODIGO ESPERADO: 400 Bad Request (password "abc" no cumple la politica:
+// minimo 8 caracteres, una mayuscula, un numero y un caracter especial).
+meta {
+  name: 400-clave-debil
+  type: http
+  seq: 33
+}
+
+post {
+  url: {{baseUrl}}/auth/register
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Clave Debil",
+    "email": "clave.debil@englishlab.com",
+    "password": "abc"
+  }
+}

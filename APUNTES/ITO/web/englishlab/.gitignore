@@ -1,0 +1,23 @@
+# --- Secretos y configuracion local (nunca se commitea) ---
+.env
+.env.*
+application.properties
+application-*.properties
+!application.properties.example
+!application-*.example
+
+# --- Compilacion y dependencias ---
+target/
+*.class
+node_modules/
+dist/
+
+# --- IDE / editores ---
+.idea/
+*.iml
+.vscode/
+
+# --- Varios ---
+*.log
+~$*
+.~lock.*

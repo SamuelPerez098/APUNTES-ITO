@@ -1,0 +1,20 @@
+// objetivo 1 = PRON del seed: el objetivo desbloqueado (AVAILABLE) con el que se
+// practica libremente desde "Mis objetivos" (practica libre en MASTERED/AVAILABLE/RECOMMENDED).
+// 200 esperado: PageResponse con las actividades del objetivo PRON del seed -> 1 elemento
+// (id 1, title "Choose the correct subject pronoun", type MULTIPLE_CHOICE, level A1,
+// skill grammar). SIN prompt/options ni clave: el detalle se pide con GET /me/activities/1.
+meta {
+  name: objective-activities
+  type: http
+  seq: 29
+}
+
+get {
+  url: {{baseUrl}}/me/objectives/1/activities?page=0&size=10
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{studentToken}}
+}

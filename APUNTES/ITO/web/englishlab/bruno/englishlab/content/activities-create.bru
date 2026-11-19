@@ -1,0 +1,40 @@
+// La estructura de "content" depende de "type" (MULTIPLE_CHOICE | FILL_BLANK).
+// objectiveId 1 = PRON y categoryId 1 = "Verbo to be" (seed).
+meta {
+  name: activities-create
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{baseUrl}}/content/activities
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+}
+
+body:json {
+  {
+    "objectiveId": 1,
+    "categoryId": 1,
+    "type": "MULTIPLE_CHOICE",
+    "level": "A1",
+    "skill": "grammar",
+    "title": "Choose the correct subject pronoun (nueva)",
+    "content": {
+      "prompt": "___ are my classmates.",
+      "options": [
+        { "id": "a", "text": "He" },
+        { "id": "b", "text": "She" },
+        { "id": "c", "text": "It" },
+        { "id": "d", "text": "They" }
+      ],
+      "answer": "d",
+      "explanation": "Usamos they para un grupo de personas."
+    }
+  }
+}

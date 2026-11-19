@@ -1,0 +1,11 @@
+# --- Compilacion Maven ---
+target/
+
+# --- Configuracion local (solo se commitea application.properties.example) ---
+src/main/resources/application.properties
+src/main/resources/application-local*.properties
+
+# --- IDE / editores ---
+.idea/
+*.iml
+.vscode/

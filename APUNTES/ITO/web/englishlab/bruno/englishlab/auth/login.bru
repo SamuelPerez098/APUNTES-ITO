@@ -1,0 +1,31 @@
+// Rellena adminToken. Las claves NO se commitean: se copian en el entorno
+// ({{adminEmail}} / {{adminPassword}}, etc.) desde docs/README-evaluacion.md.
+// Para profesor/estudiante: cambia el email a {{teacherEmail}} y usa
+// {{teacherPassword}} (o {{studentEmail}} / {{studentPassword}}), y cambia el
+// target del setEnvVar a teacherToken / studentToken. Ver bruno/README.md.
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/auth/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "email": "{{adminEmail}}",
+    "password": "{{adminPassword}}"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("adminToken", res.body.token);
+}
